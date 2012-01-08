@@ -1,0 +1,141 @@
+/* styles.less
+ * Less and CSS definitions for website.
+ */
+
+//
+// Variables
+//
+
+// Colors
+@black:             #000;
+@grayDark:          lighten(@black, 25%);
+@gray:              lighten(@black, 50%);
+@grayLight:         lighten(@black, 75%);
+@grayLighter:       lighten(@black, 90%);
+@white:             #fff;
+@blue:              #049CDB;
+@blueDark:          #0064CD;
+@green:             #46a546;
+@red:               #9d261d;
+@yellow:            #ffc40d;
+@orange:            #f89406;
+@pink:              #c3325f;
+@purple:            #7a43b6;
+
+// Fonts
+@baseFontSize:		16; // 16px is default font size in most browsers
+@baseFontFamily:	"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+@baseFontWeight:	normal;
+
+// Layout
+@deviceWidth:		1000; // width of website on device
+@maxWidth:			(@deviceWidth / @baseFontSize) + 0em;
+@contentWidth:		(730 / @deviceWidth) * 100 + 0%;	// 73%
+@sidebarWidth:		(250 / @deviceWidth) * 100 + 0%;	// 25%
+
+//
+// Mixins
+//
+
+//
+
+//
+// Layout
+//
+
+body { 
+	font-size: 100%; // approx 16px in most browser
+	font-family: @baseFontFamily;
+	font-weight: @baseFontWeight;
+	background: @white;
+	color: @grayDark;
+	width:	@maxWidth;
+	margin: 0 auto;
+}
+
+// main layout components
+#wrapper {
+	padding: 0;
+}
+section#page-content {
+	float: left;
+	width: @contentWidth;
+}
+section#page-sidebar {
+	float: right;
+	width: @sidebarWidth;
+}
+header#page-header {
+	border-bottom: 1px solid @grayDark;
+	padding: 20px 0 10px 0;
+	
+	nav {
+		position: relative;
+		width: (800 / @deviceWidth) * 100 + 0%;	// 73%
+		margin: 0 auto;
+		font-size: 1.1em;
+		
+		ul {
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			
+			li {
+				float: left;
+				width: (200 / @deviceWidth) * 100 + 0%; // 20%
+				
+				a:link, a:visited {
+					display: block;
+					float: left;
+					width: 100%;
+					font-size: 1.0em;
+					line-height: 1.3em;
+					font-weight: bold;
+					text-decoration: none;
+					letter-spacing: 2px;
+					color: @black;
+					border-left: 1px solid @grayLighter;
+					padding: .8em 15px;
+				}
+				
+				a:hover, a:active {
+				    color: @gray;
+				    text-shadow: none;
+				}
+			}
+		}
+	}
+	
+	h1 {
+	    font-size: 1.5em;
+		padding: 0 0 0.5em 0;
+		
+		a:link, a:visited {
+		    color: @black;
+		    display: block;
+		    font-weight: bold;
+		    text-decoration: none;
+		}
+		
+		a:hover, a:active {
+		    color: @gray;
+		    text-shadow: none;
+		}
+	}
+	
+	p {
+	    font-size: 1.2em;
+		padding: 0 0 0.25em 0;
+	}
+}
+footer#page-footer {
+	clear: both;
+	border-top: 2px solid #grayDark;
+	padding: 10px 0 10px 0;
+	font-size: 0.75em;
+}
+
+section#content aside {
+	float: left;
+	width: 100%;
+}
